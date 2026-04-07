@@ -1,6 +1,6 @@
-let container = document.getElementById("conatainer");
+let container = document.getElementById("container");
 
-let malmotlar = [
+let malumotlar = [
   {
     "id": 1,
     "ism": "Farhod",
@@ -201,4 +201,23 @@ let malmotlar = [
     "email": "malika.sultonova@example.com",
     "yaratilgan_sana": "2025-03-30"
   }
-]
+];
+
+
+const render = (data) => {
+      const cards = data.map((el) => `
+        <div class="card">
+          <h2>${el.ism} ${el.familiya}</h2>
+          <p><strong>Yosh:</strong> ${el.yosh}</p>
+          <p><strong>Shahar:</strong> ${el.shahar}</p>
+          <p><strong>Telefon:</strong> ${el.telefon}</p>
+          <p><strong>Email:</strong> ${el.email}</p>
+          <p><strong>Yaratilgan sana:</strong> ${el.yaratilgan_sana}</p>
+        </div>
+      `).join("");
+
+      container.innerHTML = cards;
+    };
+
+    // Eng muhimi — funksiyani chaqirish
+    render(malumotlar);
